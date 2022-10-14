@@ -47,6 +47,7 @@ def main():
     ax.plot(tx[flag == 1],flux[flag == 1],'.',color="red")
     ax.set_xlabel('Time (BJD-2450000)', fontsize=16)
     ax.set_ylabel('Stellar Flux (DN/s/pixel)', fontsize=16)
+    ax.legend(["Stellar Flux", "Flagged Data"], loc ="lower right")
 
     fig, ax=plt.subplots()
     ax.plot(tx,bkgd,'.',color='blue')
