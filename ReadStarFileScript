@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+basedir="/Users/pwilliams/Documents/Programming/Python/projects/Stereo/Target2Lightcurve/TPF2SAPLC/starLists"
+filename="OneStar.txt"
+
+infile=${basedir}/${filename}
+
+while read -r info; do
+
+  read NAME aper <<< "$info"
+
+  python3 createSAPLC.py $NAME $aper
+
+done < "$infile"
