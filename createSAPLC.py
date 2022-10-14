@@ -11,7 +11,7 @@ def main():
     # Silence number of open plot warnings
     plt.rcParams.update({'figure.max_open_warning': 0})
 
-    # Plot fontsizes 
+    # Plot fontsizes
     axvalsz = 14   # Axis values
     axlabsz = 16   # Axis titles
 
@@ -21,7 +21,7 @@ def main():
 
     # Research base directory
     readir   = "/Users/pwilliams/Documents/Research/"
-    
+
     resdir   = readir+"stereo/"
     savedir  = resdir+"StellarData/"+star+"/"
     LCdir = savedir+"LC/"
@@ -29,7 +29,7 @@ def main():
         os.mkdir(LCdir)
 
 ########################################################################
-    
+
     ######################
     # Read in HI-1A data #
     ######################
@@ -45,15 +45,23 @@ def main():
     fig, ax = plt.subplots()
     ax.plot(tx,flux,'.',color="blue")
     ax.plot(tx[flag == 1],flux[flag == 1],'.',color="red")
-    
+    ax.set_xlabel('Time (BJD-2450000)', fontsize=16)
+    ax.set_ylabel('Stellar Flux (DN/s/pixel)', fontsize=16)
+
     fig, ax=plt.subplots()
     ax.plot(tx,bkgd,'.',color='blue')
+    ax.set_xlabel('Time (BJD-2450000)', fontsize=16)
+    ax.set_ylabel('Background Flux (DN/s/pixel)', fontsize=16)
 
     fig, ax = plt.subplots()
     ax.plot(tx,flag,'.',color="blue")
+    ax.set_xlabel('Time (BJD-2450000)', fontsize=16)
+    ax.set_ylabel('Data Flag', fontsize=16)
 
     fig, ax = plt.subplots()
     ax.plot(flux,bkgd,'.',color="blue")
+    ax.set_xlabel('Stellar Flux (DN/s/pixel)', fontsize=16)
+    ax.set_ylabel('Background Flux (DN/s/pixel)', fontsize=16)
 
     plt.show()
     quit()
@@ -61,4 +69,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
