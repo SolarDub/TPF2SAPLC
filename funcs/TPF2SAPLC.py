@@ -35,7 +35,7 @@ def TPF2SAPLC(orb,star,apRad, flagthresh):
 
     # Stamp dimensions, timestamp, input pixel stamp
     sXdim, sYdim, tx, stampin = readSTEREO(basedir, orb,star)
-    
+
 ##################################################################
 # Perform Simple Aperture Photometry of HI-1A target pixel images #
 ##################################################################
@@ -47,7 +47,7 @@ def TPF2SAPLC(orb,star,apRad, flagthresh):
     annrad = 4.7        # Inner radius of annulus
     annwid = 3.2        # Width of annulus
                         # Outer radius of annulus = inner radius + width
-    
+
     stsz   = 0.1               # Sub-pixel step-size
     gdXsz  = int(sXdim/stsz)   # Grid x-dimension
     gdYsz  = int(sYdim/stsz)   # Grid y-dimension
@@ -98,7 +98,7 @@ def TPF2SAPLC(orb,star,apRad, flagthresh):
                                          , gdXsz, gdYsz, datfld)
 
 
-            # Use found centroid coordinates to build new distance from centroid array
+            # Use these centroid coordinates to build new distance-from-centroid array
             Rmat2 = np.sqrt((xv-(XCMsub-0.5))*(xv-(XCMsub-0.5)) \
                           + (yv-(YCMsub-0.5))*(yv-(YCMsub-0.5)))
 
@@ -108,9 +108,9 @@ def TPF2SAPLC(orb,star,apRad, flagthresh):
 
             sig, flagval, Nsigp, uninrdat = collectFlux(apRad, Rmat2, gdXsz, gdYsz, datfld, flagthresh)
 
-            ##########################################
+            ########################################
             # Sample background within the annulus #
-            ##########################################
+            ########################################
 
             bkval, bkerr = sampleBackground(gdXsz,gdYsz,Rmat2,annrad,annwid,datfld)
 
@@ -131,7 +131,7 @@ def TPF2SAPLC(orb,star,apRad, flagthresh):
                 halfwayterms = [XCMsub, YCMsub, datfld, uninrdat]
 
 
-       # Plot aperture image + lightcurve#
+       # Plot aperture image + lightcurve #
         plotTPFplusLC(apRad, annrad, annwid, stsz, halfwayterms, tx, flux)
 
 #########################

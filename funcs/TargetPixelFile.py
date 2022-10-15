@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import fitsio
 from fitsio import FITS,FITSHDR
 
-# Function to read HI-1A TPF times and stamps
+# Function to read HI-1A TPF times and image stamps
 def readSTEREO(basedir, orb,star):
 
     savedir   = basedir+"stereo/StellarData/"+star+"/"
@@ -21,7 +21,7 @@ def readSTEREO(basedir, orb,star):
     if os.path.isdir(multidir) == False:
         os.mkdir(multidir)
 
-    pref = "STEREO_HI-1A"
+    pref = "STEREO_HI-1A_TPF"
     ext  = "fits"
 
     filenm    = pref + "_r" + f'{orb:02d}' + "_" + star + "." + ext
@@ -56,7 +56,7 @@ def subpixelGrid(sXdim, sYdim, stsz):
     gdXsz  = int(sXdim/stsz)   # Grid x-dimension
     gdYsz  = int(sYdim/stsz)   # Grid y-dimension
 
-    x      = np.linspace(-sXdim/2.0,sXdim/2.0-stsz,gdXsz)  
+    x      = np.linspace(-sXdim/2.0,sXdim/2.0-stsz,gdXsz)
     y      = np.linspace(-sYdim/2.0,sYdim/2.0-stsz,gdYsz)
     xv, yv = np.meshgrid(x, y)
 
@@ -67,12 +67,12 @@ def subpixelDataField(stamp, stsz, gdXsz):
     lstarr = []   # Set up blank list array to construct sub-pixel datafield
 
     # Loop through stamp columns and repeat values
-    #  by number of sub-pixels per pixel
+    # by number of sub-pixels per pixel.
     # Append onto current list array
     for ip in range(gdXsz):
         lst = np.repeat(stamp[m.floor(ip*stsz),:],int(1/stsz))
         lstarr.append(lst)
-        
+
     datfld = (np.array(lstarr))
 
     return datfld
@@ -92,10 +92,10 @@ def initialFluxCentroid(sXdim, sYdim, stamp):
 
     xm = np.linspace(-mxp,mxp,xD)
     ym = np.linspace(-mxp,mxp,yD)
-    
+
     xmv, ymv = np.meshgrid(xm, ym)
-    
-    XCMsub = np.sum(datsbv*xmv)/np.sum(datsbv) 
+
+    XCMsub = np.sum(datsbv*xmv)/np.sum(datsbv)
     YCMsub = np.sum(datsbv*ymv)/np.sum(datsbv)
 
     return XCMsub, YCMsub
@@ -137,7 +137,7 @@ def FluxCentroid(apRadCent, xv, yv, XCMsub, YCMsub, gdXsz,gdYsz, datfld):
 
 def collectFlux(apRad, Rmat2, gdXsz,gdYsz, datfld, flagthresh):
 
-    # Create an aperture mask around this centroid 
+    # Create an aperture mask around this centroid
     mask                = 1 + np.zeros((gdXsz,gdYsz))
     mask[Rmat2 > apRad] = 0
     # Calculate number of pixels within aperture
@@ -201,7 +201,7 @@ def sampleBackground(gdXsz,gdYsz,Rmat2,annrad,annwid,datfld):
     bkerr = np.sqrt(bkvar + bkvar/bknum)
 
     return bkval, bkerr
-        
+
 
 def plotTPFplusLC(apRad, annrad, annwid, stsz, halfwayterms, tx, flux):
 
@@ -261,4 +261,3 @@ def plotTPFplusLC(apRad, annrad, annwid, stsz, halfwayterms, tx, flux):
     ax[1].set_ylim(ylmu,ylml)
     ax[1].set_ylabel('Flux (DN/s/pixel)')
     plt.gca().invert_yaxis()
-
