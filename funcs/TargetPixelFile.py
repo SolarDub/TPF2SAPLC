@@ -15,17 +15,20 @@ from fitsio import FITS,FITSHDR
 # Function to read HI-1A TPF times and image stamps
 def readSTEREO(basedir, orb,star):
 
-    savedir   = basedir+"stereo/StellarData/"+star+"/"
-    multidir  = savedir+"Multi/"
+#    savedir   = basedir+"stereo/StellarData/"+star+"/"
+#    multidir  = savedir+"Multi/"
 
-    if os.path.isdir(multidir) == False:
-        os.mkdir(multidir)
+#    if os.path.isdir(multidir) == False:
+#        os.mkdir(multidir)
 
     pref = "STEREO_HI-1A_TPF"
     ext  = "fits"
 
     filenm    = pref + "_r" + f'{orb:02d}' + "_" + star + "." + ext
-    file_name = savedir + 'TPFs/' + filenm
+#    file_name = savedir + 'TPFs/' + filenm
+    file_name = basedir + '/TPFs/' + filenm
+
+    print("Reading from target pixel file: ", file_name)
 
     fits = fitsio.FITS(file_name)
 
@@ -245,19 +248,30 @@ def plotTPFplusLC(apRad, annrad, annwid, stsz, halfwayterms, tx, flux):
     ax[0].set_xlabel('X (pixels)', fontsize=16)
     ax[0].set_ylabel('Y (pixels)', fontsize=16)
 
-    meanflux = np.median(flux)
+    medflux = np.median(flux)
 
-    if (max(flux)-meanflux) < (meanflux-min(flux)):
+#    print("")
+#    print("Median flux: ", medflux)
+#    print("Max flux: ", max(flux))
+#    print("Min flux: ", min(flux))
+#    print("")
+
+    if (max(flux)-medflux) < (medflux-min(flux)):
         ylmu = max(flux)+1
-        ylml = 2.2*meanflux-max(flux)-1
+        ylml = 2.2*medflux-max(flux)-1
     else:
-        ylmu = 2.2*meanflux-min(flux)+1
+        ylmu = 2.2*medflux-min(flux)+1
         ylml = min(flux)-1
+
+#    print("")
+#    print("Upper plot limit: ", ylmu)
+#    print("Lower plot limit: ", ylml)
+#    print("")
 
     # Plot full time-series
     ax[1].plot(tx,flux,'.')
     ax[1].set_xlim(min(tx),max(tx))
     ax[1].set_xlabel('Time (BJD-2450000)')
-    ax[1].set_ylim(ylmu,ylml)
+#    ax[1].set_ylim(ylmu,ylml)
     ax[1].set_ylabel('Flux (DN/s/pixel)')
     plt.gca().invert_yaxis()

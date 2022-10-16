@@ -31,7 +31,8 @@ def TPF2SAPLC(orb,star,apRad, flagthresh):
     # Read in HI-1A data #
     ######################
 
-    basedir   = "/Users/pwilliams/Documents/Research/"
+#    basedir   = "/Users/pwilliams/Documents/Research/"
+    basedir = os.getcwd()
 
     # Stamp dimensions, timestamp, input pixel stamp
     sXdim, sYdim, tx, stampin = readSTEREO(basedir, orb,star)
