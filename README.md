@@ -15,7 +15,7 @@ To produce a chosen star's SAP lightcurve from its TPF:
 - Access "OneStar.txt" in ./StarLists
 - Change the starname (first column) to the one you require (e.g. 12Sgr).
 - Leave the aperture pixel size (second column) as-is, i.e. 3.2
-- - or you can see the effects of varying the size by changing its value.
+  - or you can see the effects of varying the size by changing its value.
 
 I will be adding methods to use dialog boxes to select star and aperture size in the future.
 
@@ -28,6 +28,6 @@ To produce a 'Curve of Growth', to see how total stellar flux varies with apertu
 Note:
 - the total flux increases with aperture size (blue curve).
 - the first derivative (green curve) shows:
-- - an increase - more and more flux is being collected from the star's profile as the aperture increases in size
-- - a decrease - the aperture increases in size, by the star's profile drops off
-- - a minumum - the aperture continues to increase and eventually starts collecting flux surrounding the target
+  - an increase - more and more flux is being collected from the star's profile as the aperture increases in size
+  - a decrease - the aperture increases in size, by the star's profile drops off
+  - a minumum - the aperture continues to increase and eventually starts collecting flux surrounding the target
