@@ -17,18 +17,11 @@ def main():
     axvalsz = 14   # Axis values
     axlabsz = 16   # Axis titles
 
-    # Read in star parameters
-    star=str(sys.argv[1])
-    apRad=float(str(sys.argv[2]))
-
-    # Research base directory
-#    readir   = "/Users/pwilliams/Documents/Research/"
-#
-#    resdir   = readir+"stereo/"
-#    savedir  = resdir+"StellarData/"+star+"/"
-#    LCdir = savedir+"LC/"
-#    if os.path.isdir(LCdir) == False:
-#        os.mkdir(LCdir)
+    # Distribute input arguments
+    star=str(sys.argv[1])            # Star name
+    apRad=float(str(sys.argv[2]))    # Aperture radius
+    CofG = int(str(sys.argv[3]))     # Whether to just produce Curve of Growth
+    orb  = int(str(sys.argv[4]))     # List of orbits
 
 ########################################################################
 
@@ -36,13 +29,11 @@ def main():
     # Read in HI-1A data #
     ######################
 
-    orb = 10
 
     flagthresh = 1.5 # 0.1; 1; 1.5
 
-    if (int(str(sys.argv[3])) == 1):
+    if (CofG == 1):
         produceCofG(orb,star,flagthresh)
-
 
     print("")
     tx, flux, bkgd, flag, err = TPF2SAPLC(orb,star,apRad,flagthresh)
