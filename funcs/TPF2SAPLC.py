@@ -76,7 +76,7 @@ def TPF2SAPLC(orb,star,apRad, flagthresh):
 
             datfld = [] # Set up blank sub-pixel datafield
 
-            # Stamp array for a single time
+            # Stamp array for time-step
             stamp = stampin[i][0]
 
             #######################################################
