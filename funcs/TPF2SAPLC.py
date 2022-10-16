@@ -25,7 +25,7 @@ from funcs.TargetPixelFile import *
 ##################################################################
 
 
-def TPF2SAPLC(orb,star,apRad, flagthresh):
+def TPF2SAPLC(orb,star,apRad,flagthresh):
 
     ######################
     # Read in HI-1A data #

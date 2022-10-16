@@ -275,3 +275,27 @@ def plotTPFplusLC(apRad, annrad, annwid, stsz, halfwayterms, tx, flux):
 #    ax[1].set_ylim(ylmu,ylml)
     ax[1].set_ylabel('Flux (DN/s/pixel)')
     plt.gca().invert_yaxis()
+
+def analysisPlots(tx, flux, bkgd, flag):
+
+    fig, ax = plt.subplots()
+    ax.plot(tx,flux,'.',color="blue")
+    ax.plot(tx[flag == 1],flux[flag == 1],'.',color="red")
+    ax.set_xlabel('Time (BJD-2450000)', fontsize=16)
+    ax.set_ylabel('Stellar Flux (DN/s/pixel)', fontsize=16)
+    ax.legend(["Stellar Flux", "Flagged Data"], loc ="lower right")
+
+    fig, ax=plt.subplots()
+    ax.plot(tx,bkgd,'.',color='blue')
+    ax.set_xlabel('Time (BJD-2450000)', fontsize=16)
+    ax.set_ylabel('Background Flux (DN/s/pixel)', fontsize=16)
+
+    fig, ax = plt.subplots()
+    ax.plot(tx,flag,'.',color="blue")
+    ax.set_xlabel('Time (BJD-2450000)', fontsize=16)
+    ax.set_ylabel('Data Flag', fontsize=16)
+
+    fig, ax = plt.subplots()
+    ax.plot(flux,bkgd,'.',color="blue")
+    ax.set_xlabel('Stellar Flux (DN/s/pixel)', fontsize=16)
+    ax.set_ylabel('Background Flux (DN/s/pixel)', fontsize=16)

@@ -4,32 +4,9 @@ import sys
 import matplotlib
 import matplotlib.pyplot as plt
 
+from funcs.produceCofG import produceCofG
 from funcs.TPF2SAPLC import TPF2SAPLC
-
-def analysisPlots(tx, flux, bkgd, flag):
-
-    fig, ax = plt.subplots()
-    ax.plot(tx,flux,'.',color="blue")
-    ax.plot(tx[flag == 1],flux[flag == 1],'.',color="red")
-    ax.set_xlabel('Time (BJD-2450000)', fontsize=16)
-    ax.set_ylabel('Stellar Flux (DN/s/pixel)', fontsize=16)
-    ax.legend(["Stellar Flux", "Flagged Data"], loc ="lower right")
-
-    fig, ax=plt.subplots()
-    ax.plot(tx,bkgd,'.',color='blue')
-    ax.set_xlabel('Time (BJD-2450000)', fontsize=16)
-    ax.set_ylabel('Background Flux (DN/s/pixel)', fontsize=16)
-
-    fig, ax = plt.subplots()
-    ax.plot(tx,flag,'.',color="blue")
-    ax.set_xlabel('Time (BJD-2450000)', fontsize=16)
-    ax.set_ylabel('Data Flag', fontsize=16)
-
-    fig, ax = plt.subplots()
-    ax.plot(flux,bkgd,'.',color="blue")
-    ax.set_xlabel('Stellar Flux (DN/s/pixel)', fontsize=16)
-    ax.set_ylabel('Background Flux (DN/s/pixel)', fontsize=16)
-
+from funcs.TargetPixelFile import analysisPlots
 
 def main():
 
@@ -62,6 +39,10 @@ def main():
     orb = 10
 
     flagthresh = 1.5 # 0.1; 1; 1.5
+
+    if (int(str(sys.argv[3])) == 1):
+        produceCofG(orb,star,flagthresh)
+
 
     print("")
     tx, flux, bkgd, flag, err = TPF2SAPLC(orb,star,apRad,flagthresh)
