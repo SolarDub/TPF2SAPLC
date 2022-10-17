@@ -37,7 +37,7 @@ You may quit the program by entering 0 into any of the above prompts.
 
 ----
 
-The lightcurve produced is a simple sampling of the target pixel image array, including noise, trends, spikes, etc. An example is shown below for the Cepheid star 12 Sgr. Not the two downward spikes, one due to the star's image x-position coinciding with that of the bloomed CCD columns of the Earth, the second due to Mars. For other examples, the plot scaling may be influenced by these spikes, so one may have to zoom in to observe the lightcurve.
+The lightcurve produced is a simple sampling of the target pixel image array, including noise, trends, spikes, etc. The movie shown below illustrates the production line of HI-1A image -> target pixel images -> lightcurve for the Cepheid star 12 Sgr. Not the two downward spikes, one due to the star's image x-position coinciding with that of the bloomed CCD columns of the Earth (near 7522 days), the second due to Mars (near 7562 days). For other examples, the plot scaling may be influenced by these spikes, so one may have to zoom in to observe the lightcurve.
 
 These artifacts are reduced and the lightcurve analysed in both the time- and frequency-domains using subsequent codes. A sample of these are archived in the classes directory of this repository.
 
