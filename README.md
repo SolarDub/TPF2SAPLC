@@ -35,6 +35,12 @@ A prompt to enter the orbit number of interest will subsequently appear:
 
 You may quit the program by entering 0 into any of the above prompts.
 
+----
+
+The lightcurve produced is a simple sampling of the target pixel image array, including noise, trends, spikes, etc. An example is shown below for the Cepheid star 12 Sgr. Not the two downward spikes, one due to the star's image x-position coinciding with that of the bloomed CCD columns of the Earth, the second due to Mars. For other examples, the plot scaling may be influenced by these spikes, so one may have to zoom in to observe the lightcurve.
+
+These artifacts are reduced and the lightcurve analysed in both the time- and frequency-domains using subsequent codes. A sample of these are archived in the classes directory of this repository.
+
 https://user-images.githubusercontent.com/81772405/196067242-d9a88692-9f2e-430d-a35f-628e80ae2313.mp4
 
 ----
