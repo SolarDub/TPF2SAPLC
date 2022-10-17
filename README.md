@@ -48,4 +48,5 @@ Note:
   - a decrease - the aperture increases in size, by the star's profile drops off
   - a minumum - the aperture continues to increase and eventually starts collecting flux surrounding the target
 
+![12Sgr_CofG](https://user-images.githubusercontent.com/81772405/196067826-26f62e58-0f45-48fa-8a29-0ea6aa188cfb.jpg)
 
