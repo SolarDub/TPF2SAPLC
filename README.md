@@ -9,6 +9,8 @@ To execute:
 - Type "./ReadStarFileScript", with optional switches
   - These options may be reviewed by entering "./ReadStarFileScript --help".
 
+----
+
 Sample Target Pixel Files (TPFs), created by the createTPFs program, are situated in "TPFs" directory. The filename contains the star name without spaces, i.e. 12 Sgr -> 12Sgr.
 
 To produce a chosen star's SAP lightcurve from its TPF, either:
