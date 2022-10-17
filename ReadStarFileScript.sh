@@ -49,6 +49,8 @@ then
   exit
 fi
 
+echo $starname
+
 echo "Orbits selected: ${ORBS}"
 echo ' '
 
