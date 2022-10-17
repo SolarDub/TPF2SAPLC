@@ -33,6 +33,10 @@ A prompt to enter the orbit number of interest will subsequently appear:
 
 You may quit the program by entering 0 into any of the above prompts.
 
+https://user-images.githubusercontent.com/81772405/196067242-d9a88692-9f2e-430d-a35f-628e80ae2313.mp4
+
+----
+
 To produce a 'Curve of Growth', to see how total stellar flux varies with aperture size, add the switch -c to the executable command, i.e.:
 - Type "./ReadStarFileScript -c", or
 - Type "./ReadStarFileScript -c -s" if you also wish to enter the name of the star into the prompt 
@@ -43,3 +47,5 @@ Note:
   - an increase - more and more flux is being collected from the star's profile as the aperture increases in size
   - a decrease - the aperture increases in size, by the star's profile drops off
   - a minumum - the aperture continues to increase and eventually starts collecting flux surrounding the target
+
+
