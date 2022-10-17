@@ -9,8 +9,12 @@ source "./shfuncs/getOrbits.sh"
 source "./shfuncs/getStarname.sh"
 source "./shfuncs/produceCofG.sh"
 source "./shfuncs/getApertureSize.sh"
+source "./shfuncs/ifHelp.sh"
 
 SWS=${*}   # Array of switches
+
+# Check if --help switch has been activated
+ifHelp
 
 basedir="./starLists"
 filename="OneStar.txt"
