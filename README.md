@@ -29,7 +29,7 @@ or
   - "./ReadStarFileScript" 
 
 A prompt to enter the orbit number of interest will subsequently appear:
-- The only orbit currently availble is 10
+- The only orbit currently available is Orbit 10
 - To see the orbit numbers with the corresponding observation time range, enter:
   - "./ReadStarFileScript --ohelp" 
 
