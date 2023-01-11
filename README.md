@@ -1,7 +1,7 @@
 # TPF2SAPLC
 Develop stellar photometric time-series (i.e. 'lightcurves') from previously constructed STEREO HI-1A Target Pixel Images using Simple Aperture Photometry (SAP) methods.
 
-For MAC-OS only.
+For Mac-OS only.
 
 To execute:
 - Open Terminal.
