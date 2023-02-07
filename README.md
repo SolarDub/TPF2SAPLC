@@ -7,7 +7,8 @@ To execute:
 - Open Terminal.
 - Change directory to the 'base directory' where 'ReadStarFileScript' resides.
 - Type "./ReadStarFileScript", with optional switches
-  - These options may be reviewed by entering "./ReadStarFileScript --help".
+  - These options may be reviewed by entering "./ReadStarFileScript --help"
+  - or simply "./ReadStarFileScript"
 
 ----
 
@@ -26,7 +27,7 @@ or
 - Leave the aperture pixel size (second column) as-is, i.e. 3.2
   - or you can see the effects of varying the size by changing its value (up to 4.5).
 - Then type:
-  - "./ReadStarFileScript" 
+  - "./ReadStarFileScript -t" 
 
 A prompt to enter the orbit number of interest will subsequently appear:
 - The only orbit currently available is Orbit 10
