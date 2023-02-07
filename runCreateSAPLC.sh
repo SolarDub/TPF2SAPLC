@@ -4,12 +4,14 @@
 # Import functions #
 ####################
 
-source "./shfuncs/prompt.sh"
-source "./shfuncs/getOrbits.sh"
-source "./shfuncs/getStarname.sh"
-source "./shfuncs/produceCofG.sh"
-source "./shfuncs/getApertureSize.sh"
-source "./shfuncs/ifHelp.sh"
+SRCBASHDIR="./src/Bash/"
+
+source ${SRCBASHDIR}"prompt.sh"
+source ${SRCBASHDIR}"getOrbits.sh"
+source ${SRCBASHDIR}"getStarname.sh"
+source ${SRCBASHDIR}"produceCofG.sh"
+source ${SRCBASHDIR}"getApertureSize.sh"
+source ${SRCBASHDIR}"ifHelp.sh"
 
 SWS=${*}   # Array of switches
 
