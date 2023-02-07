@@ -65,7 +65,7 @@ then
 
   python3 createSAPLC.py $starname $aper $CofG $ORBS
 
-else
+elif [[ $SWS == *"-t"* ]]
 
   while read -r info; do
 

@@ -8,7 +8,7 @@ ReadStarFileScript.sh HELP FILE
 
 To execute:
 
-    ./ReadStarFileScript.sh [--help] [--ohelp] [-c] [-s]
+    ./ReadStarFileScript.sh [--help] [--ohelp] [-c] [-s] [-t]
 
 Description:
 
@@ -18,11 +18,6 @@ Description:
 		Each new orbit starts as the center of the HI-1A field-of-view passes 0h RA.
 
     Both the above will quit execution on printing their respective text.
-
-
-    default	With no switches, the program will read a star name and aperture size from a text file
-		and apply the simple aperture photometry method to the images in the target pixel file
-		resulting in the production of a photomteric time-series, i.e. lightcure, for that star.
 
 
     After entering the data relevant to the selection of the switches below,
@@ -47,6 +42,13 @@ Description:
 		A second prompt will follow requesting the entry of a aperture size (in pixels) with
 		which to perform the Simple Aperture Photometry. A value of 3.2 is recommended, but
 		any value (up to 4.5) can be entered to see the effects of varying the aperture size.
+
+
+    -t		Read star name and aperture size from a text file.
+
+		With no switches, the program will read a star name and aperture size from a text file
+		and apply the simple aperture photometry method to the images in the target pixel file
+		resulting in the production of a photomteric time-series, i.e. lightcure, for that star.
 
 
 ******************************************************************************************
