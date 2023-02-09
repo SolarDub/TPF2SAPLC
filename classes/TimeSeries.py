@@ -13,7 +13,7 @@ from scipy import interpolate
 from classes.Spectrum import *
 
 #
-#   Set up a base class for a time-series
+#   Set up a base class for a general time-series
 #
 class TimeSeries(object):
     # Set up instance
@@ -91,7 +91,7 @@ class TimeSeries(object):
         return t, x
 
 
-    # Smooth light curve using low-pass filter
+    # Smooth time-series using low-pass filter
     def smoothFilter(self, width):
         t = self.time
         x = self.data
@@ -157,7 +157,7 @@ class TimeSeries(object):
         return t, xrem
 
 
-    # Select range start -> end of timeseries, while removing any NaN values
+    # Select range start -> end of time-series, while removing any NaN values
 
     def selectRange(self,start,end, **kwargs):
         t = self.time   # time
@@ -385,7 +385,7 @@ class TimeSeries(object):
 
         return phi2, x2
 
-    # Smooth light curve using low-pass filter
+    # Smooth time-series using low-pass filter
     def produceResiduals(self,width):
         t = self.time   # time
         x = self.data   # data

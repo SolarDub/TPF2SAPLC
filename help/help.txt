@@ -2,13 +2,13 @@
 ******************************************************************************************
 
 *******************************
-ReadStarFileScript.sh HELP FILE
+runCreateSAPLC.sh HELP FILE
 *******************************
 
 
 To execute:
 
-    ./ReadStarFileScript.sh [--help] [--ohelp] [-c] [-s] [-t]
+    ./runCreateSAPLC.sh [--help] [--ohelp] [-c] [-s] [-t]
 
 Description:
 
