@@ -11,7 +11,7 @@ from scipy.signal import find_peaks
 from scipy import interpolate
 
 #
-#   Set up a base class for a time-series
+#   Set up a base class for a frequency spectrum
 #
 class Spectrum(object):
     
