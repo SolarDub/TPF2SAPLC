@@ -5,10 +5,10 @@ For Mac-OS only.
 
 To execute:
 - Open Terminal.
-- Change directory to the 'base directory' where 'ReadStarFileScript' resides.
-- Type "./ReadStarFileScript", with optional switches
-  - These options may be reviewed by entering "./ReadStarFileScript --help"
-  - or simply "./ReadStarFileScript"
+- Change directory to the 'base directory' where 'runCreateSAPLC.sh' resides.
+- Type "./runCreateSAPLC", with optional switches
+  - These options may be reviewed by entering "./runCreateSAPLC.sh --help"
+  - or simply "./runCreateSAPLC.sh"
 
 ----
 
@@ -16,7 +16,7 @@ Sample Target Pixel Files (TPFs), created by the createTPFs program, are situate
 
 To produce a chosen star's SAP lightcurve from its TPF, either:
 - To enter the name of the star into the prompt, type:
-  - "./ReadStarFileScript -s"
+  - "./runCreateSAPLC.sh -s"
 - A prompt will follow requesting the aperture size in pixel
   - 3.2 is recommended or you can see the effects of varying the size by selecting a different value (up to 4.5).
 
@@ -27,12 +27,12 @@ or
 - Leave the aperture pixel size (second column) as-is, i.e. 3.2
   - or you can see the effects of varying the size by changing its value (up to 4.5).
 - Then type:
-  - "./ReadStarFileScript -t" 
+  - "./runCreateSAPLC.sh -t" 
 
 A prompt to enter the orbit number of interest will subsequently appear:
 - The only orbit currently available is Orbit 10
 - To see the orbit numbers with the corresponding observation time range, enter:
-  - "./ReadStarFileScript --ohelp" 
+  - "./runCreateSAPLC.sh --ohelp" 
 
 You may quit the program by entering 0 into any of the above prompts.
 
@@ -47,8 +47,8 @@ https://user-images.githubusercontent.com/81772405/196067242-d9a88692-9f2e-430d-
 ----
 
 To produce a 'Curve of Growth', to see how total stellar flux varies with aperture size, add the switch -c to the executable command, i.e.:
-- Type "./ReadStarFileScript -c", or
-- Type "./ReadStarFileScript -c -s" if you also wish to enter the name of the star into the prompt 
+- Type "./runCreateSAPLC.sh -c", or
+- Type "./runCreateSAPLC.sh -c -s" if you also wish to enter the name of the star into the prompt 
 
 Note:
 - the total flux increases with aperture size (blue curve).
