@@ -1,14 +1,26 @@
-# TPF2SAPLC
-Develop stellar photometric time-series (i.e. 'lightcurves') from previously constructed STEREO HI-1A Target Pixel Images using Simple Aperture Photometry (SAP) methods.
+:construction_worker: WORK IN PROGRESS :construction_worker:
 
-For Mac-OS only.
+# TPF2SAPLC #
+These application will develop stellar photometric time-series (i.e. 'lightcurves') from previously constructed STEREO HI-1A Target Pixel File (TPF) images using Simple Aperture Photometry (SAP) methods.
 
-To execute:
-- Open Terminal.
-- Change directory to the 'base directory' where 'runCreateSAPLC.sh' resides.
-- Type "./runCreateSAPLC", with optional switches
-  - These options may be reviewed by entering "./runCreateSAPLC.sh --help"
-  - or simply "./runCreateSAPLC.sh"
+## Requirements
+
+Currently, this application has been written only for Mac-OS.
+
+This application will work with Python 3.7 or later.
+
+This application is currently a demonstration version. It is hard-coded to read sample TPFs from a directory located in this current working directory.
+
+## Help scripts
+
+To access the help file, which lists the usable switches, at the terminal prompt, type
+
+    $ ./runCreateSAPLC.sh --help
+
+or simply
+
+    $ ./runCreateSAPLC.sh
+
 
 ----
 
