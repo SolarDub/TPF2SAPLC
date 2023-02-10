@@ -21,25 +21,43 @@ or simply
 
     $ ./runCreateSAPLC.sh
 
-
 ----
 
-Sample Target Pixel Files (TPFs), created by the createTPFs program, are situated in "TPFs" directory. The filename contains the star name without spaces, i.e. 12 Sgr -> 12Sgr.
+## Producing SAP Lightcurves
 
-To produce a chosen star's SAP lightcurve from its TPF, either:
-- To enter the name of the star into the prompt, type:
-  - "./runCreateSAPLC.sh -s"
-- A prompt will follow requesting the aperture size in pixel
-  - 3.2 is recommended or you can see the effects of varying the size by selecting a different value (up to 4.5).
+A star's photometric time-series (lightcurves) is produced from images located in its respective TPF, created by the createTPFs application. A list of ready-made TPFs can be found in the TPFs directory:
 
-or
+    $ ls -al TPFs/
 
-- Access "OneStar.txt" in ./StarLists
+The filenames contain the star names without spaces, i.e. 12 Sgr -> 12Sgr.
+
+To produce a selected star's SAP lightcurve from its TPF, one may proceed in one of two ways.
+
+##### Enter the details into prompt boxes
+
+- At the terminal prompt, enter
+
+    $ ./runCreateSAPLC.sh -s
+
+- A prompt box will appear requesting the entry of a single star name. Try 12 Sgr by typing:
+
+    `12Sgr`
+    
+- The next prompt will appear requesting the entry of the aperture size, in pixels, to be using in the SAP process. Try 3.2 pixels by typing:
+
+    `3.2`
+    
+- You may wish to see the effects of varying the size by trying a different value (up to 4.5 pixels).
+
+##### Using data within a prepared text file
+
+- Open "OneStar.txt" in ./StarLists
 - Change the starname (first column) to the one you require (e.g. 12Sgr).
 - Leave the aperture pixel size (second column) as-is, i.e. 3.2
   - or you can see the effects of varying the size by changing its value (up to 4.5).
-- Then type:
-  - "./runCreateSAPLC.sh -t" 
+- Then at the terminal prompt, type:
+
+    $ ./runCreateSAPLC.sh -t
 
 A prompt to enter the orbit number of interest will subsequently appear:
 - The only orbit currently available is Orbit 10
