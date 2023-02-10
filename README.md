@@ -15,11 +15,11 @@ Codes used in this application can be found in the current working directory, fu
 
 ## Help scripts
 
-To access the help file, which lists the usable switches, at the terminal prompt, type
+To access the help file, which lists the usable switches, at the terminal prompt, type:
 
     $ ./runCreateSAPLC.sh --help
 
-or simply
+or simply:
 
     $ ./runCreateSAPLC.sh
 
@@ -97,23 +97,22 @@ https://user-images.githubusercontent.com/81772405/196067242-d9a88692-9f2e-430d-
 
 A 'Curve of Growth' that illustrates how total stellar flux varies with aperture size can be used to select an aperture size to use with the SAP process.
 
-To produce a such a Curve of Growth, add the switch -c to the executable command, i.e.:
-- Type:
+To produce a such a Curve of Growth, add the switch -c to the executable command.
+
+If using the star list to input the star name, enter:
 
     $ ./runCreateSAPLC.sh -c
 
-- - if using the star list to input the star name,
+or if entering the star name via the prompt, enter:
 
     $ ./runCreateSAPLC.sh -c -s
 
-- - if you wish to enter the name of the star into a prompt.
-
-Notes:
-- the total flux increases with aperture size (blue curve).
+The resulting plot includes:
+- the total flux, which increases with aperture size (blue curve).
 - the first derivative (green curve) shows:
-  - an increase - more and more flux is being collected from the star's profile as the aperture increases in size
-  - a decrease - the aperture increases in size, by the star's profile drops off
-  - a minumum - the aperture continues to increase and eventually starts collecting flux surrounding the target
+  - an increase - more and more flux is being collected from the star's profile as the aperture increases in size,
+  - a decrease - the aperture increases in size, by the star's profile drops off,
+  - a minumum - the aperture continues to increase and eventually starts collecting flux surrounding the target.
 
 ![12Sgr_CofG](https://user-images.githubusercontent.com/81772405/196067826-26f62e58-0f45-48fa-8a29-0ea6aa188cfb.jpg)
 
