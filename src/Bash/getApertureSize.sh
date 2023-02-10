@@ -8,8 +8,8 @@ function getApertureSize() {
   then
 
     while [[ $apsize == "" ]] || [[ $apsize > "4.5" ]] && [[ $apsize != "0" ]]; do
-      PRMPT1="Enter aperture size"  # Create user prompt text
-      PRMPT2="(in pixels)"
+      PRMPT1="Enter aperture size (in pixels)"  # Create user prompt text
+      PRMPT2="(Up to 4.5 pixels)"
       PRMPT3="Enter 0 to quit."
       APENT="$(prompt "$PRMPT1\n$PRMPT2\n$PRMPT3")"  # Prompt user to enter value
 

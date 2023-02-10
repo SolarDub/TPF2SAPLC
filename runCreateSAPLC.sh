@@ -5,6 +5,7 @@
 ####################
 
 SRCBASHDIR="./src/Bash/"
+SRCPYTHDIR="./src/Python/"
 
 source ${SRCBASHDIR}"prompt.sh"
 source ${SRCBASHDIR}"getOrbits.sh"
@@ -63,11 +64,11 @@ then
     echo "Aperture: ${aper}"
   fi
 
-  python3 createSAPLC.py $starname $aper $CofG $ORBS
+  python3 ${SRCPYTHDIR}createSAPLC.py $starname $aper $CofG $ORBS
 
 elif [[ $SWS == *"-t"* ]]
 then
-  
+
   while read -r info; do
 
     read starname aper <<< "$info"
@@ -75,7 +76,7 @@ then
     echo "Star: ${starname}"
     echo "Aperture: ${aper}"
 
-    python3 createSAPLC.py $starname $aper $CofG $ORBS
+    python3 ${SRCPYTHDIR}createSAPLC.py $starname $aper $CofG $ORBS
 
   done < "$infile"
 

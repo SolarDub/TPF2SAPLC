@@ -23,7 +23,7 @@ from matplotlib.ticker import MultipleLocator
 
 from scipy import signal
 
-from funcs.TargetPixelFile import *
+from TargetPixelFile import *
 
 def plotCofG(halfwayterms, flux):
 

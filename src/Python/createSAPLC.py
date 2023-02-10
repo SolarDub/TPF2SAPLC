@@ -4,9 +4,9 @@ import sys
 import matplotlib
 import matplotlib.pyplot as plt
 
-from funcs.produceCofG import produceCofG
-from funcs.TPF2SAPLC import TPF2SAPLC
-from funcs.TargetPixelFile import analysisPlots
+from produceCofG import produceCofG
+from TPF2SAPLC import TPF2SAPLC
+from TargetPixelFile import analysisPlots
 
 def main():
 

@@ -15,7 +15,7 @@ from matplotlib.ticker import MultipleLocator
 
 from scipy import signal
 
-from funcs.TargetPixelFile import *
+from TargetPixelFile import *
 
 ##################################################################
 # Reads in a HI-1A Target Pixel File for a given star during a   #
