@@ -89,6 +89,8 @@ These artifacts can be reduced and the lightcurve analysed in both the time- and
 
     $ ls -al classes
 
+----
+
 https://user-images.githubusercontent.com/81772405/196067242-d9a88692-9f2e-430d-a35f-628e80ae2313.mp4
 
 ----
