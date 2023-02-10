@@ -25,6 +25,29 @@ or simply:
 
 ----
 
+## Observations
+
+Each star is observed for ~18 days once each orbit of the STEREO spacecraft around the Sun. An orbit starts and end on the center of the HI-1A camera passing the celestial Right Ascension 0 hour meridian. The yearly observations for every star are categorized in orbit numbers, which correspond to the time range within with the star was observed.
+
+To see the orbit numbers to the corresponding observation time range, enter:
+
+    $ ./runCreateSAPLC.sh --ohelp
+
+Note, only TPFs for Orbit 10 are currently available.
+
+For Orbit 10, entering the above command yields:
+
+    `Or Start Date/Time     End Date / Time`
+    `...`
+    `10 2015 09 27 21 47 25 2016 09 06 09 43 58`
+    `...`
+
+This described Orbit 10 beginning on September 27 2015 at 21:47:25 UTC and ending on September 9 2016 at 09:48:58 UTC, at which point Orbit 11 begins.
+
+So an observation of 12 Sgr from June 5 2016 at 02:09:01 UTC until June 23 2016 at 13:29:01 UTC falls within the bounds of Orbit 10.
+
+----
+
 ## Producing SAP Lightcurves
 
 A star's photometric time-series (lightcurves) is produced from images located in its respective TPF, created by the createTPFs application. A list of ready-made TPFs can be found in the TPFs directory:
@@ -35,13 +58,8 @@ The filenames contain the star names without spaces, i.e. 12 Sgr -> 12Sgr.
 
 To produce a selected star's SAP lightcurve from its TPF, one may proceed in one of two ways. You may quit the program by entering 0 into any of the following prompts.
 
-To see the orbit numbers to the corresponding observation time range, enter:
 
-    $ ./runCreateSAPLC.sh --ohelp
-
-Note, only TPFs for orbit 10 are currently available.
-
-##### Enter the details into prompt boxes
+#### Enter the details into prompt boxes
 
 - At the terminal prompt, enter
 
@@ -61,7 +79,7 @@ Note, only TPFs for orbit 10 are currently available.
     `10`
 
 
-##### Using data within a prepared text file
+#### Using data within a prepared text file
 
 - Open "OneStar.txt" in ./StarLists
 - Change the starname (first column) to the one you require (e.g. 12Sgr).
