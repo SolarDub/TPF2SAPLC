@@ -11,6 +11,8 @@ This application will work with Python 3.7 or later.
 
 This application is currently a demonstration version. It is hard-coded to read sample TPFs from a directory located in this current working directory.
 
+Codes used in this application can be found in the current working directory, funcs and src directories. The directory tree and distribution of files are due for restructuring.
+
 ## Help scripts
 
 To access the help file, which lists the usable switches, at the terminal prompt, type
@@ -27,11 +29,17 @@ or simply
 
 A star's photometric time-series (lightcurves) is produced from images located in its respective TPF, created by the createTPFs application. A list of ready-made TPFs can be found in the TPFs directory:
 
-    $ ls -al TPFs/
+    $ ls -al TPFs
 
 The filenames contain the star names without spaces, i.e. 12 Sgr -> 12Sgr.
 
-To produce a selected star's SAP lightcurve from its TPF, one may proceed in one of two ways.
+To produce a selected star's SAP lightcurve from its TPF, one may proceed in one of two ways. You may quit the program by entering 0 into any of the following prompts.
+
+To see the orbit numbers to the corresponding observation time range, enter:
+
+    $ ./runCreateSAPLC.sh --ohelp
+
+Note, only TPFs for orbit 10 are currently available.
 
 ##### Enter the details into prompt boxes
 
@@ -39,15 +47,19 @@ To produce a selected star's SAP lightcurve from its TPF, one may proceed in one
 
     $ ./runCreateSAPLC.sh -s
 
-- A prompt box will appear requesting the entry of a single star name. Try 12 Sgr by typing:
+- A prompt box will appear requesting the entry of a single star name. Try 12 Sgr by entering:
 
     `12Sgr`
     
-- The next prompt will appear requesting the entry of the aperture size, in pixels, to be using in the SAP process. Try 3.2 pixels by typing:
+- The next prompt will appear requesting the entry of the aperture size, in pixels, to be using in the SAP process. Try 3.2 pixels by entering:
 
     `3.2`
     
 - You may wish to see the effects of varying the size by trying a different value (up to 4.5 pixels).
+- The next prompt will appear requesting the entry of the orbit number of the star's TPF to be used. The only orbit currently available is Orbit 10, so enter:
+
+    `10`
+
 
 ##### Using data within a prepared text file
 
@@ -55,32 +67,48 @@ To produce a selected star's SAP lightcurve from its TPF, one may proceed in one
 - Change the starname (first column) to the one you require (e.g. 12Sgr).
 - Leave the aperture pixel size (second column) as-is, i.e. 3.2
   - or you can see the effects of varying the size by changing its value (up to 4.5).
-- Then at the terminal prompt, type:
+- At the terminal prompt, type:
 
     $ ./runCreateSAPLC.sh -t
 
-A prompt to enter the orbit number of interest will subsequently appear:
-- The only orbit currently available is Orbit 10
-- To see the orbit numbers with the corresponding observation time range, enter:
-  - "./runCreateSAPLC.sh --ohelp" 
+- A prompt will appear requesting the entry of the orbit number of the star's TPF to be used. The only orbit currently available is Orbit 10, so enter:
 
-You may quit the program by entering 0 into any of the above prompts.
+    `10`
 
 ----
 
-The lightcurve produced is a simple sampling of the target pixel image array, including noise, trends, spikes, etc. The movie shown below illustrates the production line of HI-1A image -> target pixel images -> lightcurve for the Cepheid star 12 Sgr. Note the two downward spikes, one due to the star's image x-position coinciding with that of the bloomed CCD columns of the Earth (near 7522 days), the second due to Mars (near 7562 days). For other examples, the plot scaling may be influenced by these spikes, so one may have to zoom in to observe the lightcurve.
+The displayed lightcurve is derived from a simple sampling of the target pixel image array, and may including noise, trends, spikes, etc. The movie shown below illustrates the lightcurve production pipeline of:
 
-These artifacts are reduced and the lightcurve analysed in both the time- and frequency-domains using subsequent codes. A sample of these codes are archived in the classes directory of this repository.
+    `STEREO HI-1A image -> target pixel images -> lightcurve`
+
+for the Cepheid star 12 Sgr.
+
+Note the two downward spikes, one due to the star's image x-position coinciding with that of the bloomed CCD columns of the Earth (near 7522 days), the second due to Mars (near 7562 days). For other examples, the plot scaling may be influenced by these spikes, so one may have to zoom in to observe the lightcurve.
+
+These artifacts can be reduced and the lightcurve analysed in both the time- and frequency-domains using sample codes that have been included in the 'classes' directory of this repository:
+
+    $ ls -al classes
 
 https://user-images.githubusercontent.com/81772405/196067242-d9a88692-9f2e-430d-a35f-628e80ae2313.mp4
 
 ----
 
-To produce a 'Curve of Growth', to see how total stellar flux varies with aperture size, add the switch -c to the executable command, i.e.:
-- Type "./runCreateSAPLC.sh -c", or
-- Type "./runCreateSAPLC.sh -c -s" if you also wish to enter the name of the star into the prompt 
+## Auxillary scripts
 
-Note:
+A 'Curve of Growth' that illustrates how total stellar flux varies with aperture size can be used to select an aperture size to use with the SAP process.
+
+To produce a such a Curve of Growth, add the switch -c to the executable command, i.e.:
+- Type:
+
+    $ ./runCreateSAPLC.sh -c
+
+- - if using the star list to input the star name,
+
+    $ ./runCreateSAPLC.sh -c -s
+
+- - if you wish to enter the name of the star into a prompt.
+
+Notes:
 - the total flux increases with aperture size (blue curve).
 - the first derivative (green curve) shows:
   - an increase - more and more flux is being collected from the star's profile as the aperture increases in size
