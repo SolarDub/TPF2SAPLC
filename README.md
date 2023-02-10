@@ -11,7 +11,10 @@ This application will work with Python 3.7 or later.
 
 This application is currently a demonstration version. It is hard-coded to read sample TPFs from a directory located in this current working directory.
 
-Codes used in this application can be found in the current working directory, funcs and src directories. The directory tree and distribution of files are due for restructuring.
+Codes called in this application can be found their respective src directories:
+
+    `./src/Bash`
+    `./src/Python`
 
 ## Help scripts
 
