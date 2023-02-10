@@ -41,8 +41,11 @@ Note, only TPFs for Orbit 10 are currently available.
 For Orbit 10, entering the above command yields:
 
     `Or Start Date/Time     End Date / Time`
+
     `...`
+
     `10 2015 09 27 21 47 25 2016 09 06 09 43 58`
+
     `...`
 
 This described Orbit 10 beginning on September 27 2015 at 21:47:25 UTC and ending on September 9 2016 at 09:48:58 UTC, at which point Orbit 11 begins.
