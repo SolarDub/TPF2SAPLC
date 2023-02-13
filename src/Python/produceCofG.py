@@ -72,7 +72,7 @@ def plotCofG(halfwayterms, flux):
 
 #    fig.savefig(savedir+star+"_CofG2.pdf", bbox_inches='tight')
 
-    plot2ndDeriv(ap, dflx, dap)
+#    plot2ndDeriv(ap, dflx, dap)
 
 def plot2ndDeriv(ap, dflx, dap):
 
