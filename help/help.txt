@@ -39,7 +39,7 @@ Description:
 		The program will use this star name and obtain its coordinates from SIMBAD.
 		The star name will be passed to the main program without spaces (i.e. DXAqr from DX Aqr).
 
-		A second prompt will follow requesting the entry of a aperture size (in pixels) with
+		A second prompt will follow requesting the entry of an aperture size (in pixels) with
 		which to perform the Simple Aperture Photometry. A value of 3.2 is recommended, but
 		any value (up to 4.5) can be entered to see the effects of varying the aperture size.
 
@@ -52,5 +52,3 @@ Description:
 
 
 ******************************************************************************************
-
-
